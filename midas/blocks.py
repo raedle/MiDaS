@@ -206,7 +206,7 @@ class FeatureFusionBlock(nn.Module):
         self.resConfUnit1 = ResidualConvUnit(features)
         self.resConfUnit2 = ResidualConvUnit(features)
 
-    def forward(self, xs0, xs1):
+    def forward(self, xs0, xs1=None):
         """Forward pass.
 
         Returns:
@@ -322,7 +322,7 @@ class FeatureFusionBlock_custom(nn.Module):
         
         self.skip_add = nn.quantized.FloatFunctional()
 
-    def forward(self, xs0, xs1):
+    def forward(self, xs0, xs1=None):
         """Forward pass.
 
         Returns:

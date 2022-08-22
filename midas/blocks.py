@@ -206,16 +206,18 @@ class FeatureFusionBlock(nn.Module):
         self.resConfUnit1 = ResidualConvUnit(features)
         self.resConfUnit2 = ResidualConvUnit(features)
 
-    def forward(self, *xs):
+    def forward(self, xs):
         """Forward pass.
 
         Returns:
             tensor: output
         """
-        output = xs[0]
+        # output = xs[0]
 
-        if len(xs) == 2:
-            output += self.resConfUnit1(xs[1])
+        # if len(xs) == 2:
+        #     output += self.resConfUnit1(xs[1])
+
+        output = xs
 
         output = self.resConfUnit2(output)
 
